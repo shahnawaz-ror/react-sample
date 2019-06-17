@@ -1,9 +1,13 @@
-import React, {Component} from 'react';
-import './App.css';
+import React from "react";
+
 import Titles from "./components/Titles";
 import Form from "./components/Form";
+import Header from "./components/Header";
 import Weather from "./components/Weather";
+
+
 const API_KEY = "637ba74b4a10c5c5d7b2128025e0be94";
+
 class App extends React.Component {
   state = {
     temperature: undefined,
@@ -42,14 +46,15 @@ class App extends React.Component {
   render() {
     return (
       <div>
+        <Header />
         <div className="wrapper">
           <div className="main">
             <div className="container">
               <div className="row">
-                <div className="col-xs-5 title-container">
+                <div className="col-xs-6 title-container">
                   <Titles />
                 </div>
-                <div className="col-xs-7 form-container">
+                <div className="col-xs-6 form-container">
                   <Form getWeather={this.getWeather} />
                   <Weather 
                     temperature={this.state.temperature} 
